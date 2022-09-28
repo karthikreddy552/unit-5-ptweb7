@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce-2</title>
+    <style>
+        #main {
+            width: 90%;
+            margin: auto;
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto;
+            gap: 30px;
+        }
+        
+        .product {
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            border-radius: 10px;
+        }
+        
+        img {
+            width: 100%;
+            height: 250px;
+        }
+        
+        .sp1 {
+            font-size: 25px;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .sp2 {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: -10px;
+        }
+        
+        .sp3 {
+            font-size: 25px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: -10px;
+        }
+        
+        .sp4 {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: -10px;
+        }
+        
+        #sold {
+            width: 60px;
+            margin-left: 20px;
+            margin-bottom: 20px;
+            color: white;
+            padding: 5px 10px 5px 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+        #remove {
+            padding: 5px 10px 5px 10px;
+            margin-left: 150px;
+            margin-bottom: 20px;
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+        #counter {
+            text-align: center;
+            font-size: 40px;
+            color: black;
+            font-weight: bold;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="counter"></div>
+    <div id="main"></div>
+
+</body>
+
+</html>
+<script>
+    var a = JSON.parse(localStorage.getItem("Products")) || [];
+    var length = a.length;
+    document.getElementById("counter").innerText = `Counter:- ${length}`
+    a.map(function(e, idx) {
+        var Image = document.createElement("img");
+        var sp1 = document.createElement("p");
+        var sp2 = document.createElement("p");
+        var sp3 = document.createElement("p");
+        var sp4 = document.createElement("p");
+        var sp5 = document.createElement("button");
+        var sp6 = document.createElement("button");
+        var div = document.createElement("div");
+
+        sp1.setAttribute("class", "sp1");
+        sp2.setAttribute("class", "sp2");
+        sp3.setAttribute("class", "sp3");
+        sp4.setAttribute("class", "sp4");
+        sp5.setAttribute("id", "sold");
+        sp6.setAttribute("id", "remove");
+        div.setAttribute("class", "product");
+
+        Image.src = e.Img;
+        sp1.innerText = e.Name;
+        sp2.innerText = e.Categ;
+        sp3.innerText = e.Price;
+        sp4.innerText = e.Gender;
+        sp5.innerText = e.Sold;
+        sp5.onclick = function() {
+            change()
+        };
+        sp6.innerText = "Remove";
+        sp6.addEventListener("click", function() {
+            removeItem(idx);
+        })
+
+        if (sp5.innerText == "True") {
+            sp5.style.backgroundColor = "red";
+        } else {
+            sp5.style.backgroundColor = "green";
+        }
+
+        function change() {
+            if (sp5.innerText == "False") {
+                sp5.innerText = "True";
+                sp5.style.backgroundColor = "red";
+            } else {
+                sp5.innerText = "False";
+                sp5.style.backgroundColor = "green";
+            }
+        }
+        div.append(Image, sp1, sp2, sp3, sp4, sp5, sp6);
+        document.getElementById("main").append(div)
+    });
+
+    function removeItem(idx) {
+        a.splice(idx, 1);
+        localStorage.setItem("Products", JSON.stringify(a));
+        window.location.reload();
+    }
+</script>

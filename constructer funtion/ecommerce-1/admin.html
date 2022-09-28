@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce-1</title>
+    <style>
+        #main {
+            margin: 20px 400px 0 400px;
+            padding: 20px 0 20px 0;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        
+        #add {
+            width: 30%;
+            padding: 10px;
+            background-color: teal;
+            color: white;
+            cursor: pointer;
+            margin-left: 250px;
+            border-radius: 5px;
+            border: none;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        p {
+            font-size: 20px;
+            margin-left: 70px;
+        }
+        
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 80%;
+            margin-left: 70px;
+            padding: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="main">
+        <p>Product Name</p>
+        <input type="text" id="name" placeholder="Enter Product Name">
+        <p>Category</p>
+        <input type="text" id="category" placeholder="Enter Product Category">
+        <p>Image</p>
+        <input type="text" id="image" placeholder="Enter Image Url">
+        <p>Price</p>
+        <input type="number" id="price" placeholder="Enter Price">
+        <p>Gender</p>
+        <select id="gender">
+            <option value="">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Others">Others</option>
+        </select>
+        <p>Sold</p>
+        <select id="sold">
+            <option  value="False">False</option>
+             <option value="True">True</option>
+        </select> <br><br><br>
+        <input type="submit" id="add">
+    </form>
+</body>
+
+</html>
+<script>
+    function ProductDetails(n, c, i, p, g, s) {
+        this.Name = n;
+        this.Categ = c;
+        this.Img = i;
+        this.Price = p;
+        this.Gender = g;
+        this.Sold = s;
+    }
+    var a = JSON.parse(localStorage.getItem("Products")) || [];
+    document.querySelector("#main").addEventListener("submit", gettingValue);
+
+    function gettingValue() {
+        event.preventDefault();
+        var n = document.getElementById("name").value;
+        var c = document.getElementById("category").value;
+        var i = document.getElementById("image").value;
+        var p = document.getElementById("price").value;
+        var g = document.getElementById("gender").value;
+        var s = document.getElementById("sold").value;
+        var all = new ProductDetails(n, c, i, p, g, s);
+        a.push(all);
+        console.log(a)
+        localStorage.setItem("Products", JSON.stringify(a));
+        document.getElementById("name").value = "";
+        document.getElementById("category").value = "";
+        document.getElementById("image").value = "";
+        document.getElementById("price").value = "";
+        document.getElementById("gender").value = "";
+    }
+</script>
