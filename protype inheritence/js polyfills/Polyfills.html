@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Polyfills</title>
+</head>
+<body>
+    
+</body>
+<script>
+        //   myMap
+var a1= [1,2,3,4];
+var b= [];
+Array.prototype.myMap = function (fun){
+    var a = this;
+    for(var i=0; i<a.length; i++){
+        var elem = a[i];
+        var m= fun(elem);
+        b.push(m);
+    }
+    return b;
+}
+var m= a1.myMap(function (m){
+    return m*2;
+})
+console.log(b);
+
+        //    myForEach
+var a2=[1,2,3,4,5];
+Array.prototype.myForEach = function (fun){
+    var a = this;
+    for(var i=0; i<a.length; i++){
+        let elem = a[i];
+        let n = fun(elem);
+        console.log(n);
+    }
+}
+let n1 = a2.myForEach(function (n){
+    return n*2;
+})
+
+    //   myFilter
+var a3=[1,2,3,4,5,6,7];
+var c=[];
+Array.prototype.myFilter = function (fun){
+    var a = this;
+    for(var i=0; i<a.length; i++){
+        var elem = a[i];
+        var o= fun(elem);
+        if(o===true){
+            c.push(elem);
+        }
+    }
+return c;
+}
+
+let o2 = a3.myFilter(function (o){
+    return o%2==0;
+})
+console.log(c);
+
+        // myReduce
+var a4=[1,2,3,4,5,6,7,8,9,10];
+var d= 0;
+Array.prototype.myReduce = function (fun){
+    var a = this;
+    for(var i=0; i<a.length; i++){
+        var elem = a[i];
+        var p= fun(elem);
+           d=d+p; 
+    }
+return d;
+}
+var e = a4.myReduce(function (p){
+    return p;
+})
+console.log(d);
+</script>
+</html>
