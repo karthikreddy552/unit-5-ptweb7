@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+}
+
+#title {
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 30px;
+}
+
+.container {
+    width: 80%;
+    padding: 50px 30px;
+    margin-left: 10%;
+    background-color: rgb(50, 47, 47);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.759) 0px 3px 8px;
+}
+
+.searchBox {
+    display: grid;
+    grid-template-columns: 9fr 3fr;
+    gap: 30px;
+}
+
+#movieName,
+.btn {
+    font-size: 15px;
+    outline: none;
+    border-radius: 5px;
+    letter-spacing: 1px;
+}
+
+#movieName {
+    background-color: transparent;
+    border: 1px solid #fefbfb;
+    color: white;
+    padding: 8px 10px;
+}
+
+#movieName::placeholder {
+    color: white;
+}
+
+#movieName:focus {
+    border: 1px solid white;
+}
+
+.btn {
+    outline: none;
+    background-color: crimson;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+#message {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.displayResult {
+    color: white;
+}
+
+.displayInfo {
+    font-size: 18px;
+    display: flex;
+    width: 90%;
+    margin-top: 40px;
+    color: rgb(221, 212, 197);
+}
+
+.displayImage {
+    width: 40%;
+    margin-left: 50px;
+}
+
+.contents {
+    width: 60%;
+    text-align: justify;
+    line-height: 30px;
+}
+
+b {
+    color: white;
+}
+
+.notFound {
+    width: 80%;
+    margin: auto;
+    margin-top: 40px;
+    margin-left: 10%;
+}
+
+.recommended {
+    position: absolute;
+    top: 35%;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: green;
+}
