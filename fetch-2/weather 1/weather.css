@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    /* border: 1px solid red; */
+    background-color: whitesmoke;
+}
+
+#leftDiv {
+    display: flex;
+    /* grid-template-columns: 6fr 3fr; */
+    width: 50%;
+    margin: 30px 5px;
+}
+
+#cityName {
+    padding: 5px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    border-radius: 5px 0px 0px 5px;
+    width: 80%;
+    border: 1px solid black;
+}
+
+#searchBtn {
+    font-size: 15px;
+    width: 15%;
+    letter-spacing: 1px;
+    border-radius: 0px 5px 5px 0px;
+    border: 1px solid black;
+    color: white;
+    background-color: rgb(71, 67, 67);
+    cursor: pointer;
+}
+
+#rightDiv {
+    display: flex;
+    gap: 10px;
+    margin: 30px 10px 20px 0px;
+}
+
+.fa-sharp {
+    padding: 5px;
+}
+
+#differentWeather,
+#metric,
+#imperial {
+    padding: 5px;
+    border: none;
+    background-color: rgb(236, 230, 230);
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#metric {
+    background-color: white;
+}
+
+/* styling for parentdiv */
+
+
+.childDiv1 {
+    width: 50%;
+    margin: auto;
+    margin-left: 50px;
+    margin-top: 30px;
+    /* border: 1px solid teal; */
+    padding: 20px;
+    line-height: 30px;
+}
+
+.climateAndTemp {
+    display: flex;
+}
+
+.climateAndTemp>img {
+    width: 20%;
+}
+
+.climateAndTemp>h2 {
+    margin: 30px 0px;
+    margin-left: 20px;
+}
+
+/* styling for maps */
+.mapouter {
+    position: relative;
+    text-align: right;
+    height: 500px;
+    width: 600px;
+}
+
+.gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    height: 500px;
+    width: 600px;
+}
+
+.mapouter {
+    position: absolute;
+    top: 16%;
+    width: 30%;
+    height: 400px;
+    left: 52%;
+}
