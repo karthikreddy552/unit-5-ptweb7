@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    /* border: 1px solid red; */
+    background-color: whitesmoke;
+}
+
+#leftDiv {
+    display: flex;
+    /* grid-template-columns: 6fr 3fr; */
+    width: 50%;
+    margin: 30px 5px;
+}
+
+#cityName {
+    padding: 5px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    border-radius: 5px 0px 0px 5px;
+    width: 80%;
+    border: 1px solid black;
+}
+
+#searchBtn {
+    font-size: 15px;
+    width: 15%;
+    letter-spacing: 1px;
+    border-radius: 0px 5px 5px 0px;
+    border: 1px solid black;
+    color: white;
+    background-color: rgb(71, 67, 67);
+    cursor: pointer;
+}
+
+#rightDiv {
+    display: flex;
+    gap: 10px;
+    margin: 30px 10px 20px 0px;
+}
+
+.fa-sharp {
+    padding: 5px;
+}
+
+#differentWeather,
+#metric,
+#imperial {
+    padding: 5px;
+    border: none;
+    background-color: rgb(236, 230, 230);
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#metric {
+    background-color: white;
+}
+
+#title {
+    text-align: center;
+    margin: 20px 0px;
+}
+
+#number {
+    font-size: 50px;
+}
+
+#dispCityName {
+    text-transform: uppercase;
+}
+
+.parent {
+    width: 90%;
+    margin: auto;
+    margin-top: 10%;
+    padding: 20px 0px;
+    background-color: whitesmoke;
+    border: 1px solid black;
+}
+
+.child {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: space-between;
+    color: white;
+    height: 250px;
+    background-color: grey;
+}
+
+.child>div {
+    border: 1px solid black;
+    padding: 5px;
+    width: 20%;
+    text-align: center;
+}
+
+img {
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 5px;
+}
+
+#dispCityName {
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: -70px;
+}
