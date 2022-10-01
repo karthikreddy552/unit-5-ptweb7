@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHONE PE</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        #heading {
+            text-align: center;
+            margin-top: 15%;
+        }
+        
+        .container {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            width: 20%;
+        }
+        
+        input {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid black;
+            border-radius: 7px;
+        }
+        
+        input[type=number] {
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+        
+        #payButton {
+            width: 40%;
+            padding: 5px 0px;
+            font-size: 15px;
+            letter-spacing: 1px;
+            margin-left: 30%;
+            margin-top: 25px;
+            border: none;
+            background-color: green;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="heading">Phonepe</h1>
+    <div class="container">
+        <form action="">
+            <input type="number" id="amount" placeholder="Enter the Amount" required><br>
+        </form>
+        <a href="./phonepePass.html" target="_self"><button id="payButton" onclick="payAmount()">Pay</button></a>
+    </div>
+</body>
+
+</html>
+<script>
+    function payAmount() {
+        const payedAmount = document.getElementById("amount").value;
+        localStorage.setItem("displayAmount", JSON.stringify(payedAmount));
+        const result = JSON.parse(localStorage.getItem("displayAmount"));
+        console.log(result);
+        document.getElementById("amount").value = null;
+    }
+</script>

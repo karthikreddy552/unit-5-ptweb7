@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCDONALD's</title>
+    <script src="https://kit.fontawesome.com/ce16d2eaf5.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .parent {
+            padding: 20px 0px;
+            background-color: whitesmoke;
+        }
+
+        .navContainer {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0px;
+        }
+
+        .leftDiv {
+            width: 30%;
+        }
+
+        .rightDiv {
+            display: flex;
+            width: 60%;
+            margin-left: 20px;
+            padding: 10px 0px 0px 10px;
+            gap: 20px;
+            font-size: 18px;
+        }
+
+        .rightDiv>p {
+            cursor: pointer;
+        }
+
+        .rightDiv>p:hover {
+            text-decoration: underline;
+        }
+
+        #logo {
+            width: 10%;
+        }
+
+        #appName {
+            font-size: 25px;
+            margin-left: 10px;
+        }
+
+        .bodyContainer {
+            margin: 30px 0px;
+            border: 1px solid black;
+            display: block;
+            /* display: none; */
+        }
+
+        .childContainer {
+            display: flex;
+            width: 95%;
+            gap: 15px;
+            margin: auto;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .childContainer .child {
+            width: 30%;
+            height: 400px;
+            margin: auto;
+            text-align: center;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        }
+
+        .childContainer #image {
+            width: 100%;
+            height: 75%;
+            margin: auto;
+        }
+
+        #name {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        #selectCheckBox {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        #placeOrder {
+            width: 10%;
+            margin-left: 45%;
+            padding: 8px 0px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            background-color: teal;
+            color: white;
+        }
+
+        #placeOrder:hover {
+            background-color: crimson;
+        }
+
+        .orderedPage {
+            display: flex;
+            width: 95%;
+            gap: 15px;
+            margin: auto;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .anotherContainer {
+            width: 90%;
+            height: fit-content;
+            margin: auto;
+            border: 1px solid black;
+            display: none;
+        }
+
+        .orderedPage .child {
+            width: 30%;
+            height: 350px;
+            margin: auto;
+            text-align: center;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        }
+
+        .orderedPage img {
+            width: 100%;
+            height: 75%;
+            margin: auto;
+            margin-bottom: 10px;
+        }
+
+        .fa-solid {
+            position: absolute;
+            right: 90px;
+            top: 22%;
+            cursor: pointer;
+        }
+
+        #token {
+            display: flex;
+            position: absolute;
+            right: 130px;
+            top: 23%;
+        }
+
+        #tokenNo {
+            margin-left: 5px;
+            font-size: 20px;
+        }
+
+        #imgGif {
+            display: block;
+            width: 40%;
+            margin-left: 30%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="navContainer">
+            <div class="leftDiv">
+                <img id="logo"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/1200px-McDonald%27s_Golden_Arches.svg.png"
+                    alt="">
+                <span id="appName">McDonald's</span>
+            </div>
+            <div class="rightDiv">
+                <p>Our Menu</p>
+                <p>Download App</p>
+                <p>MyMcDonald's Rewards</p>
+                <p>Exclusive Deals</p>
+                <p>About Our Food</p>
+                <p>Locate</p>
+            </div>
+        </div>
+    </div>
+    <div class="bodyContainer">
+        <div class="childContainer">
+            <div class="child">
+                <img src="https://www.pngitem.com/pimgs/m/100-1009724_transparent-mcdonalds-food-png-international-burger-day-2019.png"
+                    alt="Burger" id="image">
+                <h2 id="name">Burger</h2>
+                <h4 id="symbol">₹ <span id="price">199</span></h4>
+                <input type="checkbox" name="checkBox" id="selectCheckBox">
+            </div>
+            <div class="child">
+                <img src="https://onebowlbaker.com/wp-content/uploads/2021/04/blueberry-muffins-2-735x735.jpg"
+                    alt="BlueBerry muffin" id="image">
+                <h2 id="name">Blueberry Muffin</h2>
+                <h4 id="symbol">₹ <span id="price">99</span></h4>
+                <input type="checkbox" name="checkBox" id="selectCheckBox">
+            </div>
+            <div class="child">
+                <img src="https://s7d1.scene7.com/is/image/mcdonalds/t-mcdonalds-Coca-Cola-Classic-Small-1:1-4-product-tile-desktop"
+                    alt="coca-cola" id="image">
+                <h2 id="name">Coca-Cola</h2>
+                <h4 id="symbol">₹ <span id="price">129</span></h4>
+                <input type="checkbox" name="checkBox" id="selectCheckBox">
+            </div>
+            <div class="child">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Chicken_McNuggets.jpg/800px-Chicken_McNuggets.jpg"
+                    alt="chicken mcnuggets" id="image">
+                <h2 id="name">Chicken McNuggets</h2>
+                <h4 id="symbol">₹ <span id="price">499</span></h4>
+                <input type="checkbox" name="checkBox" id="selectCheckBox">
+            </div>
+        </div>
+        <button id="placeOrder" onclick="orderFood()">Order Food</button>
+    </div>
+    <div class="anotherContainer">
+        <h1 class="message" style="text-align:center; margin-top: 10px;">Your Order is Preparing...</h1>
+        <button onclick="closeFun()"><span><i class="fa-solid fa-xmark fa-2x"></i></span></button>
+        <div id="tokenNumber">
+            <span id="token">
+                <h3>Order ID:-</h3><span id="tokenNo" style="font-weight: bold;"></span>
+            </span>
+        </div>
+        <img src="https://i.gifer.com/7nvD.gif" alt="" id="imgGif">
+        <div class="orderedPage">
+        </div>
+        <h2 id="totalAmo" style="text-align: center; margin-bottom: 10px;">Total Amount:- <span id="dispAmount"></span>
+        </h2>
+    </div>
+</body>
+
+</html>
+<script>
+    function orderFood() {
+        document.querySelector(".anotherContainer").style.display = "block";
+        document.querySelector(".bodyContainer").style.display = "none";
+        document.querySelector(".orderedPage").innerHTML = null;
+        let isOrdered = true;
+        let promise = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (isOrdered === true) {
+                    resolve("Order is placed!");
+                } else {
+                    reject("Order is not Placed!");
+                }
+            }, 5000);
+        });
+        promise.then(function (res) {
+            displayOrder();
+        }).catch(function (error) { });
+    }
+    function displayOrder() {
+        document.getElementById("imgGif").style.display = "none";
+        const num = Math.floor(Math.random() * 10000) + 2;
+        document.getElementById("tokenNo").textContent = num;
+        let box = document.getElementsByName("checkBox");
+        document.querySelector(".message").textContent = "Your Oder is Prepared..!";
+        let totalValue = 0;
+        if (box[0].checked === true) {
+            var div = document.createElement("div");
+            div.setAttribute("class", "child");
+            var image = document.createElement("img");
+            var h2 = document.createElement("h2");
+            image.src = "https://www.pngitem.com/pimgs/m/100-1009724_transparent-mcdonalds-food-png-international-burger-day-2019.png";
+            h2.textContent = "Burger";
+            totalValue += 199;
+            div.append(image, h2);
+            document.querySelector(".orderedPage").append(div);
+        }
+        if (box[1].checked === true) {
+            var div = document.createElement("div");
+            div.setAttribute("class", "child");
+            var image = document.createElement("img");
+            var h2 = document.createElement("h2");
+            image.src = "https://onebowlbaker.com/wp-content/uploads/2021/04/blueberry-muffins-2-735x735.jpg";
+            h2.textContent = "Blueberry Muffin";
+            totalValue += 99;
+            div.append(image, h2);
+            document.querySelector(".orderedPage").append(div);
+        }
+        if (box[2].checked === true) {
+            var div = document.createElement("div");
+            div.setAttribute("class", "child");
+            var image = document.createElement("img");
+            var h2 = document.createElement("h2");
+            image.src = "https://s7d1.scene7.com/is/image/mcdonalds/t-mcdonalds-Coca-Cola-Classic-Small-1:1-4-product-tile-desktop";
+            h2.textContent = "Coca-Cola";
+            totalValue += 129;
+            div.append(image, h2);
+            document.querySelector(".orderedPage").append(div);
+        }
+        if (box[3].checked === true) {
+            var div = document.createElement("div");
+            div.setAttribute("class", "child");
+            var image = document.createElement("img");
+            var h2 = document.createElement("h2");
+            image.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Chicken_McNuggets.jpg/800px-Chicken_McNuggets.jpg";
+            h2.textContent = "Chicken McNuggets";
+            totalValue += 499;
+            div.append(image, h2);
+            document.querySelector(".orderedPage").append(div);
+        }
+        document.getElementById("dispAmount").textContent = `₹ ${totalValue}`;
+    }
+    function closeFun() {
+        document.querySelector(".anotherContainer").style.display = "none";
+        document.querySelector(".bodyContainer").style.display = "block";
+    }
+</script>
