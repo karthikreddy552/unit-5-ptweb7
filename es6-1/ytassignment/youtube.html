@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube</title>
+    <script src="https://kit.fontawesome.com/ce16d2eaf5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./youtube.css">
+</head>
+
+<body>
+    <nav class="parent">
+        <div class="logo">
+            <div class="bars"><i class="fa-sharp fa-solid fa-bars fa-xl"></i></div>
+            <div class="youtubeLogo"><img
+                    src="https://static.vecteezy.com/system/resources/thumbnails/003/206/623/small/youtube-editorial-app-icon-free-vector.jpg"
+                    alt="" id="image">
+            </div>
+        </div>
+        <div class="searchContainer">
+            <input type="search" id="search" placeholder="Search">
+            <button id="searchBtn" onclick="searchVideoIN()"><i class="fa-solid fa-magnifying-glass fa-xl"></i></button>
+            <button id="mic"><i class="fa-solid fa-microphone fa-xl"></i></button>
+        </div>
+        <div class="userOptions">
+            <button id="icons"><i class="fa-sharp fa-solid fa-video fa-2xl"></i></button>
+            <button id="icons"><i class="fa-solid fa-bell fa-2xl"></i></button>
+            <button id="icons"><i class="fa-solid fa-user fa-2xl"></i></button>
+        </div>
+    </nav>
+    <div class="videoContainer">
+        <!-- <div class="video">
+            <img src="https://phantom-marca.unidadeditorial.es/2c3f444b0bbecebecf0d86ab58af0564/resize/1320/f/jpg/assets/multimedia/imagenes/2022/04/09/16494753061855.jpg"
+                alt="" class="thumbnail">
+            <div class="content">
+                <img src="https://phantom-marca.unidadeditorial.es/2c3f444b0bbecebecf0d86ab58af0564/resize/1320/f/jpg/assets/multimedia/imagenes/2022/04/09/16494753061855.jpg"
+                    alt="" class="channelIcon">
+                <div class="text">
+                    <h4 class="title">This is just a dummy text to check whether it is working or not</h4>
+                    <p class="channelName">Mohan's channel</p>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <iframe src="https://www.youtube.com/embed/bnVUHWCynig?&autoplay=1&volume=4"></iframe>
+    <div class="cross">
+        <button id="crossBtn"><i class="fa-solid fa-xmark fa-xl"></i></button>
+    </div>
+</body>
+
+</html>
+<script src="./youtube.js"></script>
