@@ -116,6 +116,10 @@
             ac.setAttribute("class", "ac");
 
             let book = document.createElement("button");
+
+            book.addEventListener("click", () => {
+                bookRoom(el);
+            })
             book.setAttribute("class", "book");
 
             image.src = el.Images.one;
@@ -131,5 +135,12 @@
             hotel.append(image, title, price, rating, room, ac, book);
             document.getElementById("hotels_list").append(hotel);
         })
+    }
+    let arr = JSON.parse(localStorage.getItem("setting")) || [];
+
+    function bookRoom(ele) {
+        arr.push(ele);
+        localStorage.setItem("store", JSON.stringify(arr));
+        window.location.href = "./checkout.html";
     }
 </script>

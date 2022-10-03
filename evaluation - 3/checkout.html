@@ -14,6 +14,13 @@
         <!-- Append the hotel detail inside div with id: "hotel_details" -->
     </div>
     <div id="checkout">
+        <form action="" onsubmit="">
+            <input type="text" id="user_name" placeholder="name"><br>
+            <input type="number" id="user_number" placeholder="number"><br>
+            <input type="date" id="check_in" placeholder="check in date"><br>
+            <input type="date" id="check_out" placeholder="check out date"><br>
+            <button id="book" onclick="submit()">Book</button>
+        </form>
         <!-- - The hotel details will be appended inside div with id:- "hotel_details".
   - The input fields will have ids:- "user_name", "user_number", "check_in" and "check_out"
   - The book button will have id:- "book"   -->
@@ -21,4 +28,14 @@
 </body>
 
 </html>
-<script src="./scripts/checkout.js"></script>
+
+<script>
+    function submit() {
+        event.preventDefault();
+        let name = document.getElementById("user_name").value;
+        let number = document.getElementById("user_number").value;
+        setTimeout(() => {
+            alert(`${name}, Your booking is successful!`);
+        }, 5000);
+    }
+</script>
