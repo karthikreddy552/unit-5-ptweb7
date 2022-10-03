@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<style>
+    #navbar {
+        display: flex;
+        justify-content: space-around;
+        border: 1px solid blue;
+        background-color: blue;
+    }
+    
+    #query {
+        width: 60%;
+        height: 32px;
+        margin-top: auto;
+        margin-left: 22px;
+        margin-bottom: auto;
+    }
+    
+    #login,
+    #signup {
+        margin: auto;
+    }
+    
+    #sorting {
+        display: flex;
+        justify-content: space-around;
+        padding-top: 22px;
+        padding-bottom: 22px;
+        margin: 22px;
+        /* border: 1px solid crimson; */
+        background-color: crimson;
+    }
+    /* #hotel {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        
+    } */
+</style>
+
+<body>
+    <div id="navbar">
+        <h2 style="color: red;">Hotel App</h2>
+        <input style="padding-left: 30px;" type="text" id="query" placeholder="Search for a hotel">
+        <a href="./login.html" id="login"><button>Login</button></a>
+
+        <a href="./signup.html" id="signup"><button>Signup</button></a>
+
+
+
+        <!-- the search-box id:- "query"
+ - the log-in and sign-up link will have ids:- "login" and "signup" -->
+    </div>
+    <div id="sorting">
+        <button id="sort_lth">low to high</button>
+        <button id="sort_htl">high to low</button>
+        <button id="filter_ac">AC</button>
+        <button id="filter_nonac">Non AC</button>
+        <!-- sort by price low to high Id:- "sort_lth"
+ - sort by price high to low Id:- "sort_htl"
+ - Filter Ac hotels Id:- "filter_ac"
+ - Filter Non Ac hotels Id:- "filter_nonac" -->
+    </div>
+    <div id="hotels_list">
+        <div id="hotel">
+
+        </div>
+        <!-- - Append all fetched hotels inside div with id:- "hotels_list"
+ - Every hotel card will have id:-  "hotel"
+ - The book now button will have class as "book" -->
+    </div>
+</body>
+
+</html>
+<script>
+    var query = document.querySelector("#query");
+
+
+    query.addEventListener("keypress", function(event) {
+
+        if (event.key === "Enter") {
+            event.preventDefault();
+            load(query.value);
+            console.log(query.value);
+        }
+    });
+
+    async function load(query) {
+        const url = `https://masai-api.herokuapp.com/hotels/search?city=${query}`;
+        const response = await fetch(`${url}`);
+        var data = await response.json();
+        console.log(data.hotels);
+        hotelDisplay(data.hotels);
+    }
+    load(query);
+
+    function hotelDisplay(data) {
+        data.map(function(el, ind) {
+            let image = document.createElement("img");
+            image.setAttribute("class", "image");
+            let title = document.createElement("h2");
+            title.setAttribute("class", "title");
+            let price = document.createElement("p");
+            price.setAttribute("class", "price");
+            let rating = document.createElement("p");
+            rating.setAttribute("class", "rating");
+            let room = document.createElement("p");
+            room.setAttribute("class", "room");
+            let ac = document.createElement("P");
+            ac.setAttribute("class", "ac");
+
+            let book = document.createElement("button");
+            book.setAttribute("class", "book");
+
+            image.src = el.Images.one;
+            title.textContent = el.Title;
+            price.textContent = el.Price;
+            rating.textContent = el.Rating;
+            room.textContent = el.Room;
+            ac.textContent = el.Ac;
+            book.textContent = "Book Now"
+
+
+            let hotel = document.getElementById("hotel");
+            hotel.append(image, title, price, rating, room, ac, book);
+            document.getElementById("hotels_list").append(hotel);
+        })
+    }
+</script>

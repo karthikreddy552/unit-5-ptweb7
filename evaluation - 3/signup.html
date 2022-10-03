@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign-Up</title>
+    <style>
+        #form {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar">
+        <a href="./index.html" id="home">Home</a>
+        <a href="./login.html" id="logIn">Log In</a>
+    </div>
+    <div id="form">
+        <h1>User Sign Up</h1>
+        <form action="">
+            <input type="text" id="name" placeholder="Enter name"><br>
+            <input type="email" id="email" placeholder="Enter email"><br>
+            <input type="password" id="password" placeholder="Enter password"><br>
+            <button id="sign_up" onclick="submitForm()">sign-up</button>
+        </form>
+
+        <!-- - The input fields will have ids:- "name", "email" and "password"
+  - The sign-up button will have id:- "sign_up". -->
+    </div>
+</body>
+
+</html>
+
+<script>
+    function submitForm() {
+        event.preventDefault();
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+
+        let userData = JSON.parse(localStorage.getItem("users")) || [];
+
+        function det(n, e, p) {
+            this.name = n;
+            this.email = e;
+            this.password = p;
+        }
+
+        let un = name;
+        let u1 = new det(name, email, password);
+        userData.push(u1);
+        localStorage.setItem("userName", un);
+        localStorage.setItem("users", JSON.stringify(userData));
+        alert("Signup successful");
+    }
+</script>
