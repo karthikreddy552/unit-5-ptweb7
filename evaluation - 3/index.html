@@ -42,6 +42,15 @@
         grid-template-columns: repeat(3, 1fr);
         
     } */
+    
+    #hotels_list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    img {
+        width: 40%;
+    }
 </style>
 
 <body>
@@ -68,9 +77,13 @@
  - Filter Non Ac hotels Id:- "filter_nonac" -->
     </div>
     <div id="hotels_list">
-        <div id="hotel">
-
-        </div>
+        <!-- <div id="hotel"> -->
+        <!-- <img src="${ele.Images}">
+            <h3>`${ele.Title}`</h3>
+            <h3>`${ele.Price}`</h3>
+            <p>`${ele.Rating}`</p>
+            <p>`${ele.Ac}`</p> -->
+        <!-- </div> -->
         <!-- - Append all fetched hotels inside div with id:- "hotels_list"
  - Every hotel card will have id:-  "hotel"
  - The book now button will have class as "book" -->
@@ -80,17 +93,12 @@
 </html>
 <script>
     var query = document.querySelector("#query");
-
-
-    query.addEventListener("keypress", function(event) {
-
+    query.addEventListener('keypress', ((event) => {
         if (event.key === "Enter") {
             event.preventDefault();
             load(query.value);
-            console.log(query.value);
         }
-    });
-
+    }))
     async function load(query) {
         const url = `https://masai-api.herokuapp.com/hotels/search?city=${query}`;
         const response = await fetch(`${url}`);
@@ -102,6 +110,8 @@
 
     function hotelDisplay(data) {
         data.map(function(el, ind) {
+            let hotel = document.createElement("div");
+            hotel.setAttribute("id", "hotel")
             let image = document.createElement("img");
             image.setAttribute("class", "image");
             let title = document.createElement("h2");
@@ -131,16 +141,41 @@
             book.textContent = "Book Now"
 
 
-            let hotel = document.getElementById("hotel");
+
             hotel.append(image, title, price, rating, room, ac, book);
             document.getElementById("hotels_list").append(hotel);
         })
     }
-    let arr = JSON.parse(localStorage.getItem("setting")) || [];
+
+    // let hotelDisplay = (data) => {
+    //     let hotels_list = document.querySelector("#hotels_list");
+    //     let hotel = "";
+    //     data.map(ele => {
+    //         hotel += `
+    //         <div id="hotel">
+    //         <img src=${ele.Images.two}>
+    //         <h3>${ele.Title}</h3>
+    //         <h3>${ele.Price}</h3>
+    //         <p>${ele.Rating}</p>
+    //         <p>${ele.Ac}</p>
+    //         </div>
+
+    //    `
+    //         hotels_list.innerHTML = hotel;
+
+    //     })
+
+
+
+
+
+    // }
+
+    let arr = JSON.parse(localStorage.getItem("store")) || [];
 
     function bookRoom(ele) {
         arr.push(ele);
         localStorage.setItem("store", JSON.stringify(arr));
-        window.location.href = "./checkout.html";
+       ndow.location.href = "./checkout.html"; wi
     }
 </script>

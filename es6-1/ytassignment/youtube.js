@@ -1,4 +1,4 @@
-let apiKey = "AIzaSyBHrr9znI5YWozH0zOvCeP0xuB1Io1xdNI";
+let apiKey = "AIzaSyB7uXYFb497Q-tSnHhqWgyyG8ETmAZE2cM";
 let popularVideos = `https://www.googleapis.com/youtube/v3/search/?part=snippet&maxResults=50&key=${apiKey}&type=video`;
 
 async function fetchUrl(url) {
@@ -43,7 +43,6 @@ function play(videoId) {
     btn.style.display = "block";
     btn.addEventListener("click", hideIFrame);
 }
-
 function hideIFrame() {
     document.querySelector("iframe").style.display = "none";
     btn.style.display = "none";
