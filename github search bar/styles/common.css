@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(255, 223, 223);
+    padding: 1%;
+
+}
+#leftMenu , #rightMenu{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* column-gap: 1%; */
+    width: fit-content;
+}
+img{
+    width: 30px;
+}
+
+#menus a{
+    width: fit-content;
+    margin: auto 8px;
+    text-decoration: none;
+    color: black;
+}
+#SearchBar{
+    padding: 5px;
+    margin:auto 5px;
+}
+
+#profile{
+    border-radius: 50%;
+}
+
+#repos{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1%;
+    padding: 1%;
+}
+
+#repos div{
+    border: 1px solid grey;
+    padding: 1%;
+    border-radius: 8px;
+
+
+}
+
+#repos p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 150px;
+    
+
+}
