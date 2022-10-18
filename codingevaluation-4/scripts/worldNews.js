@@ -103,7 +103,7 @@ document.getElementById("uk").addEventListener("click", () => {
     Func(`country=uk`)
 })
 document.getElementById("ch").addEventListener("click", () => {
-    initialFunc(`country=ch`)
+    Func(`country=ch`)
 })
 document.getElementById("search_box").addEventListener("keypress", () => {
     if (event.key == "Enter") {
